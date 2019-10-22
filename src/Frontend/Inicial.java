@@ -203,8 +203,8 @@ public class Inicial extends javax.swing.JFrame {
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 90, 30));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(239, 239, 239));
-        jLabel6.setText("<html> Somos apaixonados pelos bichinhos <br> e aqui serão tratados principalmente com <b>amor</b>\n");
+        jLabel6.setForeground(new java.awt.Color(233, 233, 233));
+        jLabel6.setText("<html> \n\nA Clinica Veterinária <b> ClinPet </b> tem como compromisso <br> oferecer os melhores recursos em <b>Medicina Veterinária</b> <br> para seu animal de estimação");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N

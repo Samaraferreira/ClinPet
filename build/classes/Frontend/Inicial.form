@@ -323,9 +323,9 @@
           <Font name="Segoe UI" size="12" style="0"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ef" green="ef" red="ef" type="rgb"/>
+          <Color blue="e9" green="e9" red="e9" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="&lt;html&gt; Somos apaixonados pelos bichinhos &lt;br&gt; e aqui ser&#xe3;o tratados principalmente com &lt;b&gt;amor&lt;/b&gt;&#xa;"/>
+        <Property name="text" type="java.lang.String" value="&lt;html&gt; &#xa;&#xa;A Clinica Veterin&#xe1;ria &lt;b&gt; ClinPet &lt;/b&gt; tem como compromisso &lt;br&gt; oferecer os melhores recursos em &lt;b&gt;Medicina Veterin&#xe1;ria&lt;/b&gt; &lt;br&gt; para seu animal de estima&#xe7;&#xe3;o"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
