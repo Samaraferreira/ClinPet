@@ -5,7 +5,10 @@
  */
 package Frontend;
 
+import Classes.Cliente;
+import conexão.clienteDao;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,9 +22,6 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         setTitle("ClinPet/Login");
-        setExtendedState(JFrame.MAXIMIZED_HORIZ); 
-        setVisible(true);
-        setResizable(false);
     }
 
     /**
@@ -36,9 +36,9 @@ public class Login extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        email = new javax.swing.JTextField();
+        Email = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        Senha = new javax.swing.JPasswordField();
         jLabel5 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -70,28 +70,28 @@ public class Login extends javax.swing.JFrame {
         jLabel8.setText("E-mail");
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 95, -1, -1));
 
-        email.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        email.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(12, 91, 160)));
-        email.addActionListener(new java.awt.event.ActionListener() {
+        Email.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Email.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(12, 91, 160)));
+        Email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emailActionPerformed(evt);
+                EmailActionPerformed(evt);
             }
         });
-        jPanel2.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 115, 240, -1));
+        jPanel2.add(Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 115, 240, -1));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(111, 120, 156));
         jLabel9.setText("Senha");
         jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 155, -1, -1));
 
-        jPasswordField1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jPasswordField1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(12, 91, 160)));
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+        Senha.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Senha.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(12, 91, 160)));
+        Senha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
+                SenhaActionPerformed(evt);
             }
         });
-        jPanel2.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 175, 240, -1));
+        jPanel2.add(Senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 175, 240, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(138, 138, 248));
@@ -151,13 +151,13 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
+    private void EmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_emailActionPerformed
+    }//GEN-LAST:event_EmailActionPerformed
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void SenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SenhaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_SenhaActionPerformed
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         // TODO add your handling code here:
@@ -168,9 +168,24 @@ public class Login extends javax.swing.JFrame {
 
     private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
         // TODO add your handling code here:
-        Login.this.dispose();
-        Principal c = new Principal(); 
-        c.setVisible(true);
+        String email = Email.getText();
+        String senha = new String(Senha.getPassword());        
+        clienteDao dao = new clienteDao(); 
+        Cliente c = new Cliente();
+        
+        if(dao.checarlogin(email, senha)){ //Verificando login
+            dao.consultarEmail(email);
+ 
+            Principal p = new Principal();
+            p.setVisible(true);
+            Login.this.dispose();
+        }
+        else{
+            JOptionPane.showMessageDialog(this,"Senha ou user incorreto");
+        }  
+//        Login.this.dispose();
+//        Principal c = new Principal(); 
+//        c.setVisible(true);
     }//GEN-LAST:event_jPanel1MouseClicked
 
     /**
@@ -210,7 +225,8 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField email;
+    private javax.swing.JTextField Email;
+    private javax.swing.JPasswordField Senha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
@@ -221,6 +237,5 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField jPasswordField1;
     // End of variables declaration//GEN-END:variables
 }
