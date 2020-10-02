@@ -9,4 +9,3 @@ Se trata de um programa que facilita a comunicação e o acompanhamento entre os
 ## Ferramentas utilizadas
 Um dos requisitos do trabalho era desenvolver o programa em <b> Java </b> e conectar com o <b> Banco de Dados MySQL</b>. 
 <br><br>
-Foi um projeto muito interessante e engrandecedor, pois nele pude aplicar alguns métodos ágeis, análise de requisitos, etapas do desenvolvimento e trabalho em equipe.
